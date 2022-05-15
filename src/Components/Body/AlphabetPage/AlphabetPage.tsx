@@ -1,263 +1,278 @@
 import {Container, Grid, ListItemButton, ListItemText, Tooltip} from '@mui/material';
 import React from 'react';
 import {v1} from 'uuid';
+import {NavLink} from 'react-router-dom';
 
 export type LetterType = {
     id: string,
-    upperCaseLetter: string,
-    lowerCaseLetter: string,
+    title: string,
     transcription: string,
     sound1: string
+    urlSound1: string
     sound2?: string
+    urlSound2?: string
     sound3?: string
+    urlSound3?: string
     rus: string
     url: string
 }
+
 export type AlphabetType = Array<LetterType>
 export const alphabet: AlphabetType = [
     {
         id: v1(),
-        upperCaseLetter: 'A',
-        lowerCaseLetter: 'a',
-        transcription: '[ eı ]',
+        title: 'a',
+        transcription: 'eı',
         sound1: 'eı',
+        urlSound1: 't_ei',
         sound2: 'æ',
+        urlSound2: 't_ae',
         rus: 'эй',
-        url: '/a'
+        url: 'a'
     },
     {
         id: v1(),
-        upperCaseLetter: 'B',
-        lowerCaseLetter: 'b',
-        transcription: '[ bi: ]',
+        title: 'b',
+        transcription: 'bi:',
         sound1: 'b',
+        urlSound1: 't_b',
         rus: 'би',
-        url: '/b'
+        url: 'b'
     },
     {
         id: v1(),
-        upperCaseLetter: 'C',
-        lowerCaseLetter: 'c',
-        transcription: '[ si: ]',
+        title: 'c',
+        transcription: 'si:',
         sound1: 's',
+        urlSound1: 't_s',
         sound2: 'k',
+        urlSound2: 't_k',
         rus: 'си',
-        url: '/c'
+        url: 'c'
 
     },
     {
         id: v1(),
-        upperCaseLetter: 'D',
-        lowerCaseLetter: 'd',
-        transcription: '[ di: ]',
+        title: 'd',
+        transcription: 'di:',
         sound1: 'd',
+        urlSound1: 't_d',
         rus: 'ди',
-        url: '/d'
+        url: 'd'
     },
     {
         id: v1(),
-        upperCaseLetter: 'E',
-        lowerCaseLetter: 'e',
-        transcription: '[ i: ]',
+        title: 'e',
+        transcription: 'i:',
         sound1: 'i:',
+        urlSound1: 't_ii',
         sound2: 'e',
+        urlSound2: 't_e',
         rus: 'ии',
-        url: '/e'
+        url: 'e'
     },
     {
         id: v1(),
-        upperCaseLetter: 'F',
-        lowerCaseLetter: 'f',
-        transcription: '[ ef: ]',
+        title: 'f',
+        transcription: 'ef:',
         sound1: 'f',
+        urlSound1: 't_f',
         rus: 'эф',
-        url: '/f'
+        url: 'f'
     },
     {
         id: v1(),
-        upperCaseLetter: 'G',
-        lowerCaseLetter: 'g',
-        transcription: '[ dʒi: ]',
+        title: 'g',
+        transcription: 'dʒi:',
         sound1: 'ʤ',
+        urlSound1: 't_tu',
         sound2: 'g',
-        rus: 'джи', url: '/g'
+        urlSound2: 't_g',
+        rus: 'джи',
+        url: 'g'
     },
     {
         id: v1(),
-        upperCaseLetter: 'H',
-        lowerCaseLetter: 'h',
-        transcription: '[ eıtʃ  ]',
+        title: 'h',
+        transcription: 'eıtʃ',
         sound1: 'h',
+        urlSound1: 't_h',
         rus: 'эйч',
-        url: '/h'
+        url: 'h'
     },
     {
         id: v1(),
-        upperCaseLetter: 'I',
-        lowerCaseLetter: 'i',
-        transcription: '[ aı ]',
+        title: 'i',
+        transcription: 'aı',
         sound1: 'aı',
+        urlSound1: 't_ai',
         sound2: 'ı',
+        urlSound2: 't_i',
         rus: 'ай',
-        url: '/i'
+        url: 'i'
     },
     {
         id: v1(),
-        upperCaseLetter: 'J',
-        lowerCaseLetter: 'j',
-        transcription: '[ ʤeı ]',
+        title: 'j',
+        transcription: 'ʤeı',
         sound1: 'ʤ',
+        urlSound1: 't_tu',
         rus: 'джэй',
-        url: '/j'
+        url: 'j'
     },
     {
         id: v1(),
-        upperCaseLetter: 'K',
-        lowerCaseLetter: 'k',
-        transcription: '[ keı ]',
+        title: 'k',
+        transcription: 'keı',
         sound1: 'k',
+        urlSound1: 't_k',
         rus: 'кэй',
-        url: '/k'
+        url: 'k'
     },
     {
         id: v1(),
-        upperCaseLetter: 'L',
-        lowerCaseLetter: 'l',
-        transcription: '[ el ]',
+        title: 'l',
+        transcription: 'el',
         sound1: 'l',
+        urlSound1: 't_l',
         rus: 'эл',
-        url: '/l'
+        url: 'l'
     },
     {
         id: v1(),
-        upperCaseLetter: 'M',
-        lowerCaseLetter: 'm',
-        transcription: '[ em ]',
+        title: 'm',
+        transcription: 'em',
         sound1: 'm',
+        urlSound1: 't_m',
         rus: 'эм',
-        url: '/m'
+        url: 'm'
     },
     {
         id: v1(),
-        upperCaseLetter: 'N',
-        lowerCaseLetter: 'n',
-        transcription: '[ en ]',
+        title: 'n',
+        transcription: 'en',
         sound1: 'n',
+        urlSound1: 't_n',
         rus: 'эн',
-        url: '/n'
+        url: 'n'
     },
     {
         id: v1(),
-        upperCaseLetter: 'O',
-        lowerCaseLetter: 'o',
-        transcription: '[ əʊ ]',
+        title: 'o',
+        transcription: 'əʊ',
         sound1: 'əʊ',
+        urlSound1: 't_ou',
         rus: 'оу',
-        url: '/o'
+        url: 'o'
     },
     {
         id: v1(),
-        upperCaseLetter: 'P',
-        lowerCaseLetter: 'p',
-        transcription: '[ pi: ]',
+        title: 'p',
+        transcription: 'pi:',
         sound1: 'p',
+        urlSound1: 't_p',
         rus: 'пи',
-        url: '/p'
+        url: 'p'
     },
     {
         id: v1(),
-        upperCaseLetter: 'Q',
-        lowerCaseLetter: 'q',
-        transcription: '[ kju: ]',
+        title: 'q',
+        transcription: 'kju:',
         sound1: 'k',
+        urlSound1: 't_k',
         rus: 'кью',
-        url: '/q'
+        url: 'q'
     },
     {
         id: v1(),
-        upperCaseLetter: 'R',
-        lowerCaseLetter: 'r',
-        transcription: '[ ɑ: ]',
+        title: 'r',
+        transcription: 'ɑ:',
         sound1: 'r',
+        urlSound1: 't_r',
         rus: 'ар',
-        url: '/r'
+        url: 'r'
     },
     {
         id: v1(),
-        upperCaseLetter: 'S',
-        lowerCaseLetter: 's',
-        transcription: '[ es ]',
+        title: 's',
+        transcription: 'es',
         sound1: 's',
+        urlSound1: 't_s',
         rus: 'эс',
-        url: '/s'
+        url: 's'
     },
     {
         id: v1(),
-        upperCaseLetter: 'T',
-        lowerCaseLetter: 't',
-        transcription: '[ ti: ]',
+        title: 't',
+        transcription: 'ti:',
         sound1: 't',
+        urlSound1: 't_t',
         rus: 'ти',
-        url: '/t'
+        url: 't'
     },
     {
         id: v1(),
-        upperCaseLetter: 'U',
-        lowerCaseLetter: 'u',
-        transcription: '[ ju: ]',
+        title: 'u',
+        transcription: 'ju:',
         sound1: 'ju:',
-        sound2: ' ʌ',
+        urlSound1: 't_ju',
+        sound2: 'ʌ',
+        urlSound2: 't_a',
         sound3: 'ʊ',
-        rus: 'ю', url: '/u'
+        urlSound3: 't_u',
+        rus: 'ю',
+        url: 'u'
     },
     {
         id: v1(),
-        upperCaseLetter: 'V',
-        lowerCaseLetter: 'v',
-        transcription: '[ vi: ]',
+        title: 'v',
+        transcription: 'vi:',
         sound1: 'v',
+        urlSound1: 't_v',
         rus: 'ви',
-        url: '/v'
+        url: 'v'
     },
     {
         id: v1(),
-        upperCaseLetter: 'W',
-        lowerCaseLetter: 'w',
-        transcription: '[ \'dʌbl ju: ]',
+        title: 'w',
+        transcription: '\'dʌbl ju:',
         sound1: 'w',
-        rus: 'дабл ю', url: '/w'
+        urlSound1: 't_w',
+        rus: 'дабл ю',
+        url: 'w'
     },
     {
         id: v1(),
-        upperCaseLetter: 'X',
-        lowerCaseLetter: 'x',
-        transcription: '[ eks ]',
+        title: 'x',
+        transcription: 'eks',
         sound1: 'ks',
+        urlSound1: 't_ks',
         sound2: 'gz',
-        rus: 'экс', url: '/x'
+        urlSound2: 't_gz',
+        rus: 'экс',
+        url: 'x'
     },
     {
         id: v1(),
-        upperCaseLetter: 'Y',
-        lowerCaseLetter: 'y',
-        transcription: '[ waı ]',
+        title: 'y',
+        transcription: 'waı',
         sound1: 'j',
+        urlSound1: 't_j',
         rus: 'уай',
-        url: '/y'
+        url: 'y'
     },
     {
         id: v1(),
-        upperCaseLetter: 'Z',
-        lowerCaseLetter: 'z',
-        transcription: '[ zed ]',
+        title: 'z',
+        transcription: 'zed',
         sound1: 'z',
+        urlSound1: 't_z',
         rus: 'зэд',
-        url: '/z'
+        url: 'z'
     },
 ]
 
 export const AlphabetPage = () => {
-
 
     return (
         <Container fixed>
@@ -266,20 +281,21 @@ export const AlphabetPage = () => {
                     return (
                         <Grid item xl={12} xs={6} sm={4} md={3} lg={2} key={letter.id}>
                             <Tooltip title={letter.rus} followCursor placement="right-start">
-                                <ListItemButton component="a" href={`/alphabet${letter.url}`} alignItems={'center'}>
-                                    <ListItemText style={{textAlign: 'center'}}>
-                                        <div
-                                            style={{fontSize: '40px'}}>{letter.upperCaseLetter}{letter.lowerCaseLetter}</div>
-                                        <div style={{fontSize: '25px'}}>{letter.transcription}</div>
-                                        <div>{letter.sound2 ? `изображает звуки:` : `изображает звук:`}</div>
-                                        <div>{!letter.sound2 ? `[ ${letter.sound1} ]` :
-                                            !letter.sound3 ? `[ ${letter.sound1}, ${letter.sound2} ]` :
-                                                `[ ${letter.sound1}, ${letter.sound2}, ${letter.sound3} ]`}</div>
-                                    </ListItemText>
-                                </ListItemButton>
+                                <NavLink to={`/alphabet/${letter.url}`} style={{textDecoration: 'none', color:'initial'}}>
+                                    <ListItemButton alignItems={'center'} >
+                                        <ListItemText style={{textAlign: 'center'}}>
+                                            <div
+                                                style={{fontSize: '40px'}}>{letter.title.toUpperCase()}{letter.title}</div>
+                                            <div style={{fontSize: '25px'}}>[ {letter.transcription} ]</div>
+                                            <div>{letter.sound2 ? `изображает звуки:` : `изображает звук:`}</div>
+                                            <div>{!letter.sound2 ? `[ ${letter.sound1} ]` :
+                                                !letter.sound3 ? `[ ${letter.sound1}, ${letter.sound2} ]` :
+                                                    `[ ${letter.sound1}, ${letter.sound2}, ${letter.sound3} ]`}</div>
+                                        </ListItemText>
+                                    </ListItemButton>
+                                </NavLink>
                             </Tooltip>
                         </Grid>
-
                     )
                 })}
             </Grid>

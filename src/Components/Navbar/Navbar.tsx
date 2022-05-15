@@ -44,12 +44,7 @@ export const Navbar: React.FC<NavbarPropsType> = ({changeHeadTitle}) => {
     };
     const getMenuItem = (m: MenuItemType) => {
         return (
-            <NavLink key={m.id}
-                     to={m.url}
-                     style={{
-                         textDecoration: 'none'
-                     }}
-                     onClick={() => onClickMenuItem(m)}>
+            <NavLink key={m.id} to={m.url} style={{textDecoration: 'none', color:'initial'}} onClick={() => onClickMenuItem(m)}>
                 <Tooltip arrow title={m.rus} placement="right">
                     <MenuItem onClick={handleClose}>{m.title}</MenuItem>
                 </Tooltip>
